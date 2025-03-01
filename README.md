@@ -135,7 +135,11 @@ Siendo así, obtenemos las siguientes gráficas correspondientes:
 4. Conclusiones:
 
 - Se logró aplicar con éxito el Análisis de Componentes Independientes (ICA) para separar las señales capturadas por los micrófonos y se demostró que este método es bueno para extraer la voz más predominante en un entorno de múltiples fuentes sonoras y ruido externo.
-- Se comprobó que la Relación Señal-Ruido (SNR) maneja directamente en la calidad de la separación de señales puesto que las voces con mayor SNR fueron más fáciles de aislar, mientras que las voces con menor SNR presentaron mayor contaminación con ruido, dificultando el proceso de separación. En este caso, los valores obtenidos fueron:
+- Se comprobó que la Relación Señal-Ruido (SNR) maneja directamente en la calidad de la separación de señales puesto que las voces con mayor SNR fueron más fáciles de aislar, mientras que las voces con menor SNR presentaron mayor contaminación con ruido, dificultando el proceso de separación.
+- La posición de los micrófonos y las fuentes sonoras interpretan una parte importante en la toma de la señal puesto que se comprobó que la correcta distribución de los micrófonos junto con el cálculo del retardo de señal y la atenuación por distancia permitió una mejor separación de las voces.
+- Se utilizaron algunas bibliotyecas para analizar las señales en el dominio del tiempo y la frecuencia, La Transformada Rápida de Fourier (FFT) permitió visualizar el contenido frecuencial de cada señal permitiendo la identificación y analisis de sus características espectrales demostrando que cada micrófono capturó combinaciones de las diferentes fuentes sonoras.
+  
+
   
 
 
