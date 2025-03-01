@@ -60,6 +60,25 @@ Fig 2. Fórmula tiempo de retardo.
 
 ![image](https://github.com/user-attachments/assets/4ff8ef21-179f-4f52-86b9-51aadc6356b6)
 
+-
+
+![image](https://github.com/user-attachments/assets/0b1033ad-e0e3-4e8d-be97-259023a2526e)
+
+-
+
+![image](https://github.com/user-attachments/assets/32dbaf53-7b72-4613-8fc6-dee383e304df)
+
+-
+
+![image](https://github.com/user-attachments/assets/3168048d-f276-4373-ae72-8fe6bc0092e4)
+
+-
+
+![image](https://github.com/user-attachments/assets/ac8b5405-c321-429c-8a8d-9d682f1a1bfb)
+
+
+
+
 ![image](https://github.com/user-attachments/assets/1913a556-dffb-4bca-98b5-cdce5d15a868)
 El SNR (Signal-to-Noise Ratio o Relación Señal-Ruido) es crucial en esta práctica porque determina la calidad de las señales capturadas y la efectividad del proceso de separación de fuentes.
 
