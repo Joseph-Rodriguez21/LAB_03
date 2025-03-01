@@ -36,6 +36,7 @@ SNR del audio 2 es:  16.274336576461792 dB
 SNR del audio 3 es:  16.810566186904907 db
 
 - Como se menciono en el apartado [2] se establecen las distancias entre las personas y los celulares para calcular el retardo de cada señal de audio, usando la fórmula:
+  
 ![image](https://github.com/user-attachments/assets/32e99964-6c0a-4c29-b81b-8cad581b3431)
 
 Fig 2. Fórmula tiempo de retardo.
@@ -43,14 +44,19 @@ Fig 2. Fórmula tiempo de retardo.
 ![image](https://github.com/user-attachments/assets/94a68259-0192-49c1-b050-7361ef397055)
 
 - Este tiempo se convierte en número de muestras multiplicándolo por la frecuencia de muestreo (sr) y se usa np.pad() para agregar ceros al inicio de la señal, simulando la propagación del sonido antes de ser captado.
+  
 ![image](https://github.com/user-attachments/assets/666207fb-008e-4a7f-86b7-67fa7486250f)
 
 - Además, se calcula un factor de atenuación según la distancia y se ajusta la longitud de las señales para que coincidan antes de graficarlas.
+  
 ![image](https://github.com/user-attachments/assets/5205e910-631d-4dc9-8c08-5c22816c0472)
 
 - Finalmente, se grafican las señales con matplotlib y librosa.display, asignando colores, etiquetas y leyenda para una mejor identificación.
+  
 ![image](https://github.com/user-attachments/assets/a0b36fdf-c1d8-4d0f-ae66-e325e3d79a13)
+
 ![image](https://github.com/user-attachments/assets/1913a556-dffb-4bca-98b5-cdce5d15a868)
+
 El SNR (Signal-to-Noise Ratio o Relación Señal-Ruido) es crucial en esta práctica porque determina la calidad de las señales capturadas y la efectividad del proceso de separación de fuentes.
 
 - Procesamiento de señales:
@@ -67,6 +73,7 @@ Se grafican las magnitudes de la FFT en función de la frecuencia, usando solo l
 Esto permite identificar las frecuencias dominantes en cada señal, ayudando a diferenciar fuentes sonoras y entender mejor la propagación del sonido en el entorno de medición, esto nos permite identificar las frecuencias características de la voz y determinar si hay ruido o interferencias no deseadas.
 
 - Espectro de la transfromada de Fourier en escala lineal, para observar los picos de frecuencia dominantes.
+- 
 v![image](https://github.com/user-attachments/assets/12b2daed-94ac-4ab9-a887-ae2b387d70ab)
 
 Se grafica el espectro de frecuencia de las señales de audio capturadas, utilizando una escala semilogarítmica en el eje y para mejorar la visualización de los valores pequeños en la amplitud de la FFT.
@@ -74,6 +81,7 @@ Se grafica el espectro de frecuencia de las señales de audio capturadas, utiliz
 ![image](https://github.com/user-attachments/assets/eaee0e73-9472-47fa-8372-20341c113db5)
 
 - Espectro de la transformada de Fourier en escala logaritmica en escala logarítmica, para detectar componentes débiles de la señal.
+- 
 ![image](https://github.com/user-attachments/assets/aad3c2d7-9d83-4ce1-ac63-5e3b562f275f)
 
 Permite analizar el contenido espectral de las señales de audio, con una mejor visualización de frecuencias de menor amplitud gracias a la escala logarítmica en el eje y. Esto facilita la identificación de componentes de baja energía que podrían pasar desapercibidos en una escala lineal.
@@ -81,19 +89,21 @@ Permite analizar el contenido espectral de las señales de audio, con una mejor 
 - Análisis de Componentes Independientes (ICA)
 
  Se encuentra la cantidad mínima de muestras entre las señales captadas (audio1_inicio, audio2_inicio, audio3_inicio) para asegurarse de que todas tengan la misma longitud y evitar errores al operar con matrices. Aparte se construye una matriz F con las señales de los tres micrófonos. La transposición (.T) es necesaria porque cada fila debe representar una muestra en el tiempo, y cada columna debe representar una señal captada.
+ 
 ![image](https://github.com/user-attachments/assets/c2bec2ca-2e48-4fef-8d82-7a1a162de7e1)
 
 Se instancia el modelo FastICA para encontrar 3 componentes independientes (una por cada señal captada).
 'fit_transform(F)': ajusta el modelo a los datos y devuelve las señales separadas en 'señales_separadas'.
 Ahora, 'señales_separadas' contiene tres señales independientes, cada una en una columna de la matriz.
 Se calcula la energía de cada señal separada, esta se obtiene como el promedio del cuadrado de la señal '(np.mean(señal**2))'. Por otro lado 'np.argmax(energias)': encuentra el índice de la señal con mayor energía, que se asume que corresponde a la voz principal.
+
 ![image](https://github.com/user-attachments/assets/1ea115f9-5873-45f8-b070-76a2949dad71)
 
 Se extrae la señal con mayor energía, asumiendo que es la voz más fuerte, luego se calcula la potencia dpromedio de la vos extraida, tambien se calcula la potencia del ruido tomando como referencia el cuarto audio y por último hallamos el SNR.
 
 ![image](https://github.com/user-attachments/assets/6f16fa36-b6a0-49cf-a6c3-17b245241651)
 
-![image](https://github.com/user-attachments/assets/4e33ecbc-8307-4969-b4a9-ee59feea0160)
+![image](https://github.com/user-attachments/assets/54a20696-0251-4003-8117-8fd7e9bd64e4)
 
 - Se normaliza la señal extraída (Se divide la señal voz_extraida entre su valor absoluto máximo; esto asegura que su amplitud esté en el rango de -1 a 1, evitando distorsión o saturación al guardarla como archivo de audio.), la guarda como un archivo de audio (voz_extraida.wav) y la grafica para visualizar su forma de onda en función del tiempo. Esto permite verificar que la separación de la señal fue exitosa y que la voz es claramente distinguible.
   
