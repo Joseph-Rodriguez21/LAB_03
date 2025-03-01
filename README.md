@@ -37,7 +37,9 @@ SNR del audio 3 es:  16.810566186904907 db
 
 - Como se menciono en el apartado [2] se establecen las distancias entre las personas y los celulares para calcular el retardo de cada señal de audio, usando la fórmula:
 ![image](https://github.com/user-attachments/assets/32e99964-6c0a-4c29-b81b-8cad581b3431)
+
 Fig 2. Fórmula tiempo de retardo.
+
 ![image](https://github.com/user-attachments/assets/94a68259-0192-49c1-b050-7361ef397055)
 
 - Este tiempo se convierte en número de muestras multiplicándolo por la frecuencia de muestreo (sr) y se usa np.pad() para agregar ceros al inicio de la señal, simulando la propagación del sonido antes de ser captado.
