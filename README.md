@@ -74,7 +74,21 @@ Fig 2. Fórmula tiempo de retardo.
 
 -
 
-![image](https://github.com/user-attachments/assets/ac8b5405-c321-429c-8a8d-9d682f1a1bfb)
+![image](https://github.com/user-attachments/assets/2eaa69b1-ac5e-4b73-9e1d-a2998f2a722d)
+
+-
+
+![image](https://github.com/user-attachments/assets/e6080748-c000-4f7e-8c9d-5c8ea7f6003c)
+
+-
+
+![image](https://github.com/user-attachments/assets/37b5eee8-42bb-4b2c-bdd6-c9eddb9b566c)
+
+-
+
+![image](https://github.com/user-attachments/assets/95a0115d-6b88-4a02-97ad-3667bf57299d)
+
+
 
 
 
