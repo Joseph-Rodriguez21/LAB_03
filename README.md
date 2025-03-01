@@ -37,8 +37,6 @@ SNR del audio 2 es:  16.274336576461792 dB
 
 SNR del audio 3 es:  16.810566186904907 db
 
-Un SNR bajo (por debajo de 20 dB) indica que la señal está contaminada con ruido, lo que es evidente en el audio 1 (11.71 dB), audio 2 (16.27) y audio 3 (16.81). Por otro lado un SNR alto (mayor a 60 dB) indica que la señal extraída es mucho más fuerte que el ruido. El valor de 50.85 dB confirma que la voz separada no llega a ser de alta calidad, quizás por el gran ruido que se presenta y por las distancias similares a la hora de plantear el sistema, sin embargo para ser así, se acerca mucho, lo que significa que la separación de la señal fue un proceso exitoso.
-
 - Como se menciono en el apartado [2] se establecen las distancias entre las personas y los celulares para calcular el retardo de cada señal de audio, usando la fórmula:
   
 ![image](https://github.com/user-attachments/assets/32e99964-6c0a-4c29-b81b-8cad581b3431)
@@ -108,6 +106,8 @@ Se extrae la señal con mayor energía, asumiendo que es la voz más fuerte, lue
 ![image](https://github.com/user-attachments/assets/6f16fa36-b6a0-49cf-a6c3-17b245241651)
 
 ![image](https://github.com/user-attachments/assets/54a20696-0251-4003-8117-8fd7e9bd64e4)
+
+Un SNR bajo (por debajo de 20 dB) indica que la señal está contaminada con ruido, lo que es evidente en el audio 1 (11.71 dB), audio 2 (16.27) y audio 3 (16.81). Por otro lado un SNR alto (mayor a 60 dB) indica que la señal extraída es mucho más fuerte que el ruido. El valor de 50.85 dB confirma que la voz separada no llega a ser de alta calidad, quizás por el gran ruido que se presenta y por las distancias similares a la hora de plantear el sistema, sin embargo para ser así, se acerca mucho, lo que significa que la separación de la señal fue un proceso exitoso.
 
 - Se normaliza la señal extraída (Se divide la señal voz_extraida entre su valor absoluto máximo; esto asegura que su amplitud esté en el rango de -1 a 1, evitando distorsión o saturación al guardarla como archivo de audio.), la guarda como un archivo de audio (voz_extraida.wav) y la grafica para visualizar su forma de onda en función del tiempo. Esto permite verificar que la separación de la señal fue exitosa y que la voz es claramente distinguible.
   
