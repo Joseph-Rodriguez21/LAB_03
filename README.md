@@ -32,8 +32,12 @@ Se preprocesaron las señales, eliminando posibles ruidos no deseados y normaliz
 Realizando el proceso mencionado anteriormente obtenemos los valores de SNR de cada audio, siendo estos:
 
 SNR del audio 1 es:  11.717942953109741 dB
+
 SNR del audio 2 es:  16.274336576461792 dB
+
 SNR del audio 3 es:  16.810566186904907 db
+
+Un SNR bajo (por debajo de 20 dB) indica que la señal está contaminada con ruido, lo que es evidente en el audio 1 (11.71 dB), audio 2 (16.27) y audio 3 (16.81). Por otro lado un SNR alto (mayor a 60 dB) indica que la señal extraída es mucho más fuerte que el ruido. El valor de 50.85 dB confirma que la voz separada no llega a ser de alta calidad, quizás por el gran ruido que se presenta y por las distancias similares a la hora de plantear el sistema, sin embargo para ser así, se acerca mucho, lo que significa que la separación de la señal fue un proceso exitoso.
 
 - Como se menciono en el apartado [2] se establecen las distancias entre las personas y los celulares para calcular el retardo de cada señal de audio, usando la fórmula:
   
